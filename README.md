@@ -10,9 +10,8 @@ Prover a estrutura mínima, baseada em containers dockers e "gerida" pelo docker
 4 - Dois volumes docker.  
 
 ### References
+1 - https://medium.com/devopslinks/tech-edition-how-to-dockerize-a-django-web-app-elegantly-924c0b83575d  
 
-1 - https://docs.docker.com/compose/django/  
-
-2 - https://medium.com/devopslinks/tech-edition-how-to-dockerize-a-django-web-app-elegantly-924c0b83575d  
+2 - https://docs.docker.com/compose/django/  
 
 3 - https://medium.com/@renato.groffe/postgresql-pgadmin-4-docker-compose-montando-rapidamente-um-ambiente-para-uso-55a2ab230b89  
