@@ -20,7 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'o4$8*jaf+_$^klqb1-$(ucux^%@8k2vjn_12hd))3=m+jb@r9s'
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+
+#SECRET_KEY = 'o4$8*jaf+_$^klqb1-$(ucux^%@8k2vjn_12hd))3=m+jb@r9s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -69,17 +72,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'web.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+#POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',                      
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': 'db',
+        'PORT': '5432', 
+    }
+}
+
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
