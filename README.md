@@ -29,7 +29,7 @@ Basta "*setar*" o serviço "***run.service***" para correr a shell "***run***" (
 
 #### 2.3 Observações importantes:  
 
-A shell "***run***" também **EXECUTA** as "*migrations*" e "*migrate*" automaticamente, buscando tirar vantagem desta poderosa ferramenta de gestão de banco de dados que o django tem. Entretanto, isto pode causar alguns problemas caso falte correspondência entre os "***esquemas***" do banco de dados antes de uma migração e aqueles que serão definidos pela migração. Sendo assim, esteja atento aos seus esquemas de dados e às mudanças nos mesmos; às vezes será preciso "arrumar na unha", mesmo em produção. Nas referências (abaixo) não pude encontrar um modo definitivo de lidar com isto sem possibilidade alguma de erros acontecere.  
+A shell "***run***" também **EXECUTA** as "*migrations*" e "*migrate*" automaticamente, buscando tirar vantagem desta poderosa ferramenta de gestão de banco de dados que o django tem. Entretanto, isto pode causar alguns problemas caso falte correspondência entre os "***esquemas***" do banco de dados antes de uma migração e aqueles que serão definidos por ela. Sendo assim, esteja atento aos seus esquemas de dados e às mudanças nos mesmos; às vezes será preciso "arrumar na unha", mesmo em produção. Nas referências (abaixo) não pude encontrar um modo definitivo de lidar com isto sem possibilidade alguma de erros acontecere.  
 
 **É POSSÍVEL** criar automaticamente o superusuário; a opção "*python create-super-user.py*" vem comentada por padrão, tanto na shell "***run***", quanto na shell "***entrypoint***", bastando descomentar (EM AMBAS!) para o procedimento acontecer.  
 
