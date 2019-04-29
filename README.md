@@ -19,7 +19,7 @@ Apenas alterando a *flag* numérica na chamada da shell "***run***", este projet
 
 O banco de dados aponta para um volume diferente do volume em produção.
 Além disso o servidor Django é o ***WSGI*** em desenvolvimento e ***NGINX + Gunicorn*** em produção.  
-Também é possível subir a aplicação "*Dockerizada*" ou "não *Dockerizada*" - mesmo em paralelo - pois serão servidos em portas diferentes. Isto proporciona um ritmo mais rápido em desenvovimento, já que é possível executar testes sem subir o container web (a aplicação "não *dockerizada*" consomoe os mesmos dados que a aplicação "*Dockerizada*", que são servidos pelo banco de dados DEV, que é dockerizado).  
+Também é possível subir a aplicação "*Dockerizada*" ou "não *Dockerizada*" - mesmo em paralelo - pois serão servidas em portas diferentes. Isto proporciona um ritmo mais rápido em desenvovimento, já que é possível executar testes sem subir o container web pois a aplicação "não *dockerizada*" consome e opera sobre os mesmos dados que a aplicação "*Dockerizada*", que são servidos pelo banco de dados DEV, que é dockerizado.  
 
 Uma vez que que se tenha finalizado uma etapa do desenvolvimento, é possíel "*buildar*" a imagem de container - ou mesmo dar o "*push*" para seu *registrador de container* - utilizando a mesma shell "***run***", apenas alterando para a flag correspondente.
 
