@@ -5,10 +5,10 @@
 Prover a estrutura mínima de um cluster baseado em containers dockers, abstraído por um docker-compose (DB + web + DB_management).  
 
 #### 1.1 A estrutura abstraída contém os seguintes "pods": 
-1 - Um banco de dados postgreSQL, com persistência (statefull graças a um volume docker);  
-2 - Um container web, baseado em django (statefull);  
-3 - Um container pgadmin4 (apenas no ambiente de desenvolvimento);  
-4 - Dois volumes docker.  
+i. Um banco de dados postgreSQL, com persistência (statefull graças a um volume docker);  
+ii. Um container web, baseado em django (statefull);  
+iii. Um container pgadmin4 (apenas no ambiente de desenvolvimento);  
+iv. Dois volumes docker.  
 
 ### 2 Produção e Desenvolvimento
 
