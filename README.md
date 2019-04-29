@@ -5,10 +5,11 @@
 Prover a estrutura mínima de um cluster baseado em containers dockers, abstraído por um docker-compose (DB + web + DB_management).  
 
 #### 1.1 A estrutura abstraída contém os seguintes "pods": 
-i. Um banco de dados postgreSQL, com persistência (statefull graças a um volume docker);  
+i. Um banco de dados ***postgreSQL***, com persistência (statefull graças a um volume docker);  
 ii. Um container web, baseado em django (statefull);  
-iii. Um container pgadmin4 (apenas no ambiente de desenvolvimento);  
-iv. Dois volumes docker.  
+iii. Um container ***PGadmin4*** (apenas no ambiente de desenvolvimento);  
+iv. Um container ***NGINX*** (apenas em produção) para tratar das solicitações ao cluster, bem como servir arquivos estáticos quando for o caso.
+v. Dois volumes docker.  
 
 ### 2 Produção e Desenvolvimento
 
@@ -17,7 +18,7 @@ Apenas alterando a *flag* numérica na chamada da shell "***run***", este projet
 #### 2.1 Em ambiente de desenvolvimento:  
 
 O banco de dados aponta para um volume diferente do volume em produção.
-Além disso o servidor Django é o ***WSGI*** em desenvolvimento e ***Gunicorn*** em produção.  
+Além disso o servidor Django é o ***WSGI*** em desenvolvimento e ***NGINX + Gunicorn*** em produção.  
 Também é possível subir a aplicação "*Dockerizada*" ou "não *Dockerizada*" - mesmo em paralelo - pois serão servidos em portas diferentes. Isto proporciona um ritmo mais rápido em desenvovimento, já que é possível executar testes sem subir o container web (a aplicação "não *dockerizada*" consomoe os mesmos dados que a aplicação "*Dockerizada*", que são servidos pelo banco de dados DEV, que é dockerizado).  
 
 Uma vez que que se tenha finalizado uma etapa do desenvolvimento, é possíel "*buildar*" a imagem de container - ou mesmo dar o "*push*" para seu *registrador de container* - utilizando a mesma shell "***run***", apenas alterando para a flag correspondente.
