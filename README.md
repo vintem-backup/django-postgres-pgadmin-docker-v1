@@ -32,7 +32,9 @@ Basta "*setar*" o serviço "***run.service***" para correr a shell "***run***" (
 A shell "***run***" também **EXECUTA** as "*migrations*" e "*migrate*" automaticamente, buscando tirar vantagem desta poderosa ferramenta de gestão de banco de dados que o django tem. Entretanto, isto pode causar alguns problemas caso falte correspondência entre os "***esquemas***" do banco de dados antes de uma migração e aqueles que serão definidos por ela. Sendo assim, esteja atento aos seus esquemas de dados e às mudanças nos mesmos; às vezes será preciso "arrumar na unha", mesmo em produção. Nas referências (abaixo) não pude encontrar um modo definitivo de lidar com isto sem possibilidade alguma de ocorência de erros.  
 
 **É POSSÍVEL** criar automaticamente o "***superusuário***" do Djnago; a opção "*python create-super-user.py*" vem comentada por padrão, tanto na shell "***run***", quanto na shell "***entrypoint***", bastando descomentar:  
+
 a) Apenas na shell "***run***": Somente a aplicação não dockerizada (portanto, em desenvolvimento) terá o superusuário coriado automaticamente.  
+
 b) Apenas na shell "***entrypoint**" a aplicação dockerizada terá um superusuário (cuidado se isto não for necessário em produção).  
 
 ### 3 Por que Docker?
