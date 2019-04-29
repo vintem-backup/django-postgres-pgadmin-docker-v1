@@ -8,7 +8,7 @@ Prover a estrutura mínima de um cluster baseado em containers dockers, abstraí
 i. Um banco de dados ***postgreSQL***, com persistência (statefull graças a um volume docker);  
 ii. Um container web, baseado em django (statefull);  
 iii. Um container ***PGadmin4*** (apenas no ambiente de desenvolvimento);  
-iv. Um container ***NGINX*** (apenas em produção) para tratar das solicitações ao cluster, bem como servir arquivos estáticos quando for o caso.
+iv. Um container ***NGINX*** (apenas em produção) para tratar das solicitações ao cluster, bem como servir arquivos estáticos quando for o caso.  
 v. Dois volumes docker.  
 
 ### 2 Produção e Desenvolvimento
