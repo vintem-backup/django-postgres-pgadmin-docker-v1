@@ -33,9 +33,9 @@ A shell "***run***" também **EXECUTA** as "*migrations*" e "*migrate*" automati
 
 **É POSSÍVEL** criar automaticamente o "***superusuário***" do Djnago; esta tarefa é executada pelo comando "*python create-super-user.py*", que vem comentado por padrão, tanto na shell "***run***", quanto na shell "***entrypoint***", bastando descomentar:  
 
-a) Apenas na shell "***run***": Somente a aplicação não dockerizada (portanto, em desenvolvimento) terá o superusuário coriado automaticamente.  
+a) **Apenas na shell "*run*":** Somente a aplicação não dockerizada (portanto, em desenvolvimento) terá o superusuário criado automaticamente.  
 
-b) Apenas na shell "***entrypoint***" a aplicação dockerizada terá um superusuário (cuidado se isto não for necessário em produção).  
+b) **Apenas na shell "*entrypoint*":** A aplicação dockerizada terá um superusuário (cuidado se isto não for necessário em produção).  
 
 ### 3 Por que Docker?
 
