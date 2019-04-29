@@ -35,7 +35,7 @@ A shell "***run***" também **EXECUTA** as "*migrations*" e "*migrate*" automati
 
 a) Apenas na shell "***run***": Somente a aplicação não dockerizada (portanto, em desenvolvimento) terá o superusuário coriado automaticamente.  
 
-b) Apenas na shell "***entrypoint**" a aplicação dockerizada terá um superusuário (cuidado se isto não for necessário em produção).  
+b) Apenas na shell "***entrypoint***" a aplicação dockerizada terá um superusuário (cuidado se isto não for necessário em produção).  
 
 ### 3 Por que Docker?
 
