@@ -11,11 +11,11 @@ services:
       - backend
       
   web:
-    build: .
+    build: ./worker
     ports:
       - "8001:8001"
     volumes:
-      - .:/code
+      - web:/code
     env_file:
       - ".env"
     depends_on:
@@ -26,3 +26,7 @@ services:
 networks:
   backend:
     driver: bridge
+volumes:
+  web:
+    driver: local
+    name: web
