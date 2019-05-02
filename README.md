@@ -2,14 +2,14 @@
 
 ### 1 Objetivo
 
-Prover a estrutura mínima de um cluster baseado em containers dockers, abstraído por um docker-compose (DB + web + DB_management).  
+Prover a estrutura mínima de um cluster docker, rodando uma aplicação-modelo django com banco de dados PostgreSQL.
 
 #### 1.1 A estrutura abstraída contém os seguintes "pods": 
 i. Um banco de dados ***postgreSQL***, com persistência (statefull graças a um volume docker);  
-ii. Um container web, baseado em django (statefull);  
-iii. Um container ***PGadmin4*** (apenas no ambiente de desenvolvimento);  
+ii. Um container web, baseado em django (stateless);  
+iii. Um container ***PGadmin4*** (apenas no ambiente de homologação);  
 iv. Um container ***NGINX*** (apenas em produção) para tratar das solicitações ao cluster, bem como servir arquivos estáticos quando for o caso.  
-v. Dois volumes docker.  
+v. Volumes docker.  
 
 ### 2 Produção e Desenvolvimento
 
@@ -29,13 +29,9 @@ Basta "*setar*" o serviço "***run.service***" para correr a shell "***run***" (
 
 #### 2.3 Observações importantes:  
 
-A shell "***run***" também **EXECUTA** as "*migrations*" e "*migrate*" automaticamente, buscando tirar vantagem desta poderosa ferramenta de gestão de banco de dados que o django tem. Entretanto, isto pode causar alguns problemas caso falte correspondência entre os "***esquemas***" do banco de dados antes de uma migração e aqueles que serão definidos por ela. Sendo assim, esteja atento aos seus esquemas de dados e às mudanças nos mesmos; às vezes será preciso "arrumar na unha", mesmo em produção. Nas referências (abaixo) não pude encontrar um modo definitivo de lidar com isto sem possibilidade alguma de ocorência de erros.  
+A shell "***entrypoint***" (dentro do diretório worker/) também **EXECUTA** as "*migrations*" e "*migrate*" automaticamente, buscando tirar vantagem desta poderosa ferramenta de gestão de banco de dados que o django tem. Entretanto, isto pode causar alguns problemas caso falte correspondência entre os "***esquemas***" do banco de dados antes de uma migração e aqueles que serão definidos por ela. Sendo assim, esteja atento aos seus esquemas de dados e às mudanças nos mesmos; às vezes será preciso "arrumar na unha", mesmo em produção. Nas referências (abaixo) não pude encontrar um modo definitivo de lidar com isto sem possibilidade alguma de ocorência de erros.  
 
-**É POSSÍVEL** criar automaticamente o "***superusuário***" do Djnago; esta tarefa é executada pelo comando "*python create-super-user.py*", que vem comentado por padrão, tanto na shell "***run***", quanto na shell "***entrypoint***", bastando descomentar:  
-
-a) **Apenas na shell "*run*":** Somente a aplicação não dockerizada (portanto, em desenvolvimento) terá o superusuário criado automaticamente.  
-
-b) **Apenas na shell "*entrypoint*":** A aplicação dockerizada terá um superusuário (cuidado se isto não for necessário em produção).  
+**É POSSÍVEL** criar automaticamente o "***superusuário***" do Django; esta tarefa é executada pelo comando "*python manage.py shell -c ...*" na shell "***entrypoint***". Caso queira criar automaticamente o superusuário, basta mudar a varíavel ***create_superuser*** para ***true*** em vez de ***false*** no arquivo de variáveis de ambinte (.env ou dev.env).
 
 ### 3 Por que Docker?
 
