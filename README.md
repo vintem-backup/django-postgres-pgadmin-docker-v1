@@ -41,9 +41,29 @@ A shell "***entrypoint***" (dentro do diretório worker/) também **EXECUTA** as
 
 ### 6 Referências
 
-https://realpython.com/django-migrations-a-primer/
+https://docs.docker.com/compose/django/
+
+https://medium.com/@renato.groffe/postgresql-pgadmin-4-docker-compose-montando-rapidamente-um-ambiente-para-uso-55a2ab230b89
 
 https://medium.com/devopslinks/tech-edition-how-to-dockerize-a-django-web-app-elegantly-924c0b83575d
 
 https://medium.com/devopslinks/tech-edition-django-dockerization-with-bells-and-whistles-and-a-tad-bit-of-cleverness-2b5d1b57e289
+
+https://realpython.com/django-migrations-a-primer/
+
+https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#add-or-copy
+
+https://docs.docker.com/compose/compose-file/
+
+https://pt.stackoverflow.com/questions/244368/d%C3%BAvida-quanto-a-marca%C3%A7%C3%A3o-volumes-dentro-do-docker-compose-yml
+
+https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-template
+
+https://docs.docker.com/storage/volumes/
+
+https://docs.djangoproject.com/pt-br/2.2/intro/tutorial01/
+
+
+
+
 
