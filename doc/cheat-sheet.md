@@ -6,7 +6,7 @@
 
 ### Buid an image of especific service
 
-    docker compose build [options] [--build-arg key=val...] [service_name]
+    docker-compose build [options] [--build-arg key=val...] [service_name]
 
 Options:  
     --compress              Compress the build context using gzip.  
